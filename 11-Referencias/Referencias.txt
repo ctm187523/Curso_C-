@@ -1,0 +1,54 @@
+¿Qué son las referencias?
+-Son un alias para una variable. Se trata fundamentalmente de un nombre alternativo para una variable ya existente.
+ Una vez establecida, una referencia se comporta exactamente igual que la variable a la que hace referencia, y cualquier
+ operación realizada en la referencia afecta directamente a la variable original.
+
+¿Para qué sirven?
+- Mejora de rendimiento
+- Modificación de objetos en funciones
+- Sintaxis más simple y segura que con punteros
+- Uso en sobrecarga de operadores y funciones
+- Devolución de objetos por funciones
+- Claridad en el código
+
+*Características
+- Inicialización obligatoria, una referencia debe ser inicializada al momento de su declaración y no puede existir
+  sin estar asociada a una variable
+- Inmutabilidad, después de ser iniciada, una referencia no puede ser reasignada para referirse a una diferente variable o objeto
+- Sistaxis, para declarar una referenciam se usa el operador & después del tipo de dato. Por ejemplo-> int& ref = original
+- Acceso, al utilizar una referencia, se accede al valor de la variable a la que hace referencia directamente, utilizando
+  la misma sintaxis que se emplearía con la variable original.
+
+
+                                  DIFERENCIAS ENTRE REFERENCIAS Y PUNTEROS
+
+            PUNTEROS                                                        REFERENCIAS
+                                                                      
+ -Inicialización:  Pueden ser inicializados                    -Inicialización: Deben ser inicializadas y declaradas y  
+    a nullptr(lo que significa que no apuntan                       no puden cambiar a qué objeto se refieren después
+    a ningún objeto) y puden cambiar a qué objeto                   de su Inicialización.
+    apuntan después de su Inicialización         
+
+
+-Sintaxis:  Se accede a los miembros de un objeto a            -Sintaxis: Se utilizan como si fueran el objeto mismo,sin
+    través de un puntero usando el operador ->                      necesidad de un operador especial. Por ejemplo:
+    .Por ejemplo: ptr->func()                                       ref.func().
+
+
+-Seguridad:                                                    -Seguridad: Son generalmente más seguras porque garantizan
+    Pueden ser peligrosos de usar debido a problemas                  que siempre referenciarán a un objeto válido.
+    como punteros colgantes(que apuntan a memoria ya
+    liberada), punteros no inicializados y aritmética
+    de punteros que puede llevar a errores difíciles
+    de rastrear.
+
+
+                                  REFERENCIAS VS PUNTEROS CASOS DE USO
+
+                PUNTEROS                                                    REFERENCIAS
+- Gestión de memoria dinámica(new, delete)                          - sobrecarga de operadores
+- Implementación de estructuras de datos complejas                  - Paso de parámetros por referencia
+- APIs de bajo nivel                                                - Devolución de objetos por funciones
+- Polimorfismo y maneja de la herencia                              - Implementación de patrones de diseño
+- Flexibilidad operacional, incrementos y decrementos               - Encadenamiento de funciones
+                                                                    
