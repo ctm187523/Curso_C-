@@ -14,7 +14,7 @@ using namespace std;
 
 class MiClase {
 
-   protected:         //si no pusieramos nada seria private, modificador de acceso por defecto en clases
+   protected:         //si no pusieramos nada seria private, modificador de acceso por defecto en clases, al ser protected hereda este atributo sus clases hijas, private no lo heredaria
         int edad; //Miembro público
 
     public:
