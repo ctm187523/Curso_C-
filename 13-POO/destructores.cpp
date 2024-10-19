@@ -82,6 +82,7 @@ class Rectangulo{
     //una vez por cada llamada en el main a los 3 objetos rectángulos muestra el nombre, al liberar los recursos 
     //como todo esta en el stack ya que no usamos en el main el new, se libera automáticamente
     //El STACK es una pila de tipo LIFO, el último que entra es el primero que sale
+    //ver video -> https://www.youtube.com/watch?v=UhO-aUCf8SY aunque es para c# sirve la idea
     ~Rectangulo(){
 
         cout << "Destructor invocado para objeto " << nombre  << endl;
@@ -93,6 +94,7 @@ class Rectangulo{
 
 int main(){
 
+    
     Rectangulo r1("r1");  //llamamos al primer constructor que no tiene parametros
 
     Rectangulo r2(12,"r2");  //usamos el segundo constructor le pasamos la medida

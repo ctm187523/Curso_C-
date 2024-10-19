@@ -49,6 +49,7 @@ class Rectangulo{
 
 int main(){
 
+   
     Rectangulo r1;  //llamamos al primer constructor que no tiene parametros
 
     Rectangulo r2(12);  //usamos el segundo constructor le pasamos la medida
