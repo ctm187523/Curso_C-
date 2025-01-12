@@ -78,7 +78,7 @@ class Ejemplo {
             //a diferencia de la copia superficial por defecto con esto obtenemos una DEEP COPY
             //copia profunda implica que tenemos una nueva memoria independiente ya que creamos un nuevo bloque de memoria
             //y que se copia en ese nuevo bloque de memoria el contenido
-            //AHORA EL PROGRAMA YA NO SE QUEDA COLGADO COMO EN EL ANTERIOR cosntructor_copia.cpp
+            //AHORA EL PROGRAMA YA NO SE QUEDA COLGADO COMO EN EL ANTERIOR constructor_copia.cpp
             puntero = new int(*origen.puntero);
         }
 
