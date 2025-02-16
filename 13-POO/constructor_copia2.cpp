@@ -91,10 +91,9 @@ int main(){
 
 
     Ejemplo obj1(10);
-     //usamos el constructor copia por defecto de c++, al tener los mismos metodos(metodo destructor) 
-    //como es una copia los dos quieren liberar la misma memoria y hace que el programa no funcione
-    //quiere liberar un recurso que ya no existe, al ejecutar el programa se queda colgado
-    //LA SOLUCION EN EL PROGRAMA constructor_copia 2 donde creamos el constructor copia personalizado
+    //al crear el objeto sin el operador new se guarda en el stack esto quiere decir que al salir del alcanze
+    //del metodo main el objeto se destruye automaticamente, esto no pasa si se guarda en el heap
+    //si creamos y almacenamos un objeto en el heap al salir del alcanze del main ese objeto permanece
     Ejemplo obj2 = obj1; 
 
     return 0;

@@ -1,0 +1,50 @@
+1. Recursos Estáticos
+Los recursos estáticos son aquellos cuya memoria se asigna en tiempo de compilación y se libera automáticamente cuando el programa termina o cuando salen del ámbito donde fueron declarados.
+
+Ejemplos de memoria estática
+1.1 Variables en la pila (stack)
+Las variables locales a una función o bloque se almacenan en la pila (stack) y se liberan automáticamente cuando la función termina.
+
+void funcion() {
+    int x = 10;  // Se almacena en la pila (stack)
+}  // x se destruye automáticamente al salir de la función
+1.2 Variables globales y estáticas
+Las variables globales y las declaradas con static tienen duración de vida estática, lo que significa que existen durante toda la ejecución del programa.
+
+
+int global = 5;  // Variable global (existe mientras el programa corre)
+
+void ejemplo() {
+    static int contador = 0;  // Se inicializa una vez y persiste entre llamadas
+    contador++;
+    std::cout << "Contador: " << contador << std::endl;
+}
+📌 Claves:
+
+Variables en el stack son rápidas y se liberan automáticamente.
+Variables globales y static existen toda la vida del programa.
+2. Recursos Dinámicos
+Los recursos dinámicos se asignan en tiempo de ejecución y requieren que el programador los libere manualmente con delete o delete[].
+
+Ejemplo de memoria dinámica
+
+int* ptr = new int(20);  // Asigna memoria en el heap
+std::cout << *ptr << std::endl;
+delete ptr;  // Libera la memoria
+Ejemplo con arrays dinámicos
+
+int* arr = new int[5];  // Asigna un array de 5 enteros en el heap
+arr[0] = 10;
+std::cout << arr[0] << std::endl;
+delete[] arr;  // Liberamos la memoria
+📌 Claves:
+
+Se almacenan en el heap, por lo que la memoria no se libera automáticamente.
+El programador debe usar delete o delete[] para evitar fugas de memoria.
+3. Diferencias clave entre memoria estática y dinámica
+Característica	Recursos Estáticos (Stack)	Recursos Dinámicos (Heap)
+Asignación	En tiempo de compilación o en la pila	En tiempo de ejecución en el heap
+Liberación	Automática cuando sale del ámbito	Manual con delete o delete[]
+Velocidad	Más rápido	Más lento (acceso indirecto)
+Uso	Variables locales, globales y estáticas	Objetos y arrays creados con new
+Riesgos	Desbordamiento de pila (stack overflow)	Fugas de memoria si no se libera correctamente

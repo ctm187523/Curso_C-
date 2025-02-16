@@ -1,0 +1,51 @@
+1. Declaración del puntero
+Cuando declaramos un puntero, usamos * para indicar que la variable es un puntero, pero esto no significa que estemos desreferenciándolo en este contexto. Solo estamos diciendo que la variable es un puntero.
+
+int *puntero;  // Declara un puntero a un entero
+📌 Clave: Aquí puntero es solo una variable que almacenará una dirección de memoria, pero todavía no apunta a nada válido.
+
+2. Asignación de una dirección de memoria al puntero
+Para hacer que el puntero apunte a un valor, debemos asignarle la dirección de una variable o reservar memoria dinámicamente.
+
+Ejemplo 1: Apuntar a una variable existente
+
+int x = 10;
+puntero = &x;  // Asignamos a 'puntero' la dirección de 'x'
+📌 Clave: puntero almacena la dirección de x, pero aún no estamos accediendo al valor.
+
+Ejemplo 2: Asignación dinámica en el heap
+Si queremos que el puntero apunte a una dirección de memoria en el heap, usamos new:
+
+puntero = new int(20);  // Asignamos memoria dinámica y guardamos su dirección en 'puntero'
+📌 Clave: new int(20) crea un entero en el heap con valor 20 y devuelve su dirección de memoria, que almacenamos en puntero.
+
+3. Desreferenciación del puntero
+Para acceder al valor almacenado en la dirección a la que apunta el puntero, usamos * delante del puntero.
+
+
+std::cout << *puntero << std::endl;  // Desreferenciamos el puntero para obtener el valor
+📌 Clave: *puntero nos da el valor almacenado en la dirección de memoria a la que apunta el puntero.
+
+Ejemplo completo
+
+#include <iostream>
+
+int main() {
+    int *puntero;  // Declaramos un puntero (pero aún no apunta a nada)
+    
+    puntero = new int(30);  // Asignamos memoria dinámica y guardamos su dirección en el puntero
+
+    std::cout << "Direccion almacenada en puntero: " << puntero << std::endl;
+    std::cout << "Valor almacenado en esa direccion (*puntero): " << *puntero << std::endl;
+
+    delete puntero;  // Liberamos la memoria
+    return 0;
+}
+Salida esperada
+
+Direccion almacenada en puntero: 0x600003f080
+Valor almacenado en esa direccion (*puntero): 30
+📌 Resumen
+Declaramos un puntero: int *puntero; → Solo creamos la variable puntero, pero aún no apunta a nada.
+Le asignamos una dirección de memoria: puntero = &x; o puntero = new int(20); → Ahora el puntero tiene una dirección válida.
+Desreferenciamos con *puntero para acceder al valor almacenado en esa dirección.

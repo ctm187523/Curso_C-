@@ -4,6 +4,8 @@ using namespace std;
 
 //El mismo ejemplo anterior, este ejemplo solo puede trabajar con punteros ya que podemos trabajar
 //con valores nulos
+//En C++, desreferenciar significa acceder al valor almacenado en una dirección de memoria apuntada por un puntero.
+// Para ello, se usa el operador de desreferenciación (*).
 void incrementarSiNoNulo(int *valor){
 
     if(valor !=nullptr) ++(*valor); // decimos que si no es nulo incremente el valor del parametro valor ponemos * para desreferenciar ya que valor es un puntero pasado por paramametro 
