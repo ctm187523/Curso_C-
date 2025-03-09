@@ -33,6 +33,19 @@ class CuentaBancaria{
        return this->saldo;  //no es necesario poner el this en este caso
     }
 
+    //por parametro recibe la direccion de memoria(&) de una cuenta por referencia
+    //compara si son la misma cuenta ya que tienen la misma dirección de memoria
+    void compararCuentas(const CuentaBancaria &otra){
+
+        //this hace de puntero que apunta al objeto actual, lo compara con la direccion de memoria
+        //pasada por parámetro
+        if(this==&otra){
+            cout << "Son la misma cuenta" << endl;
+        }else{
+            cout << "No son la misma cuenta" << endl;
+        }
+    }
+
 };
 
 
@@ -40,7 +53,16 @@ int main(){
 
   CuentaBancaria cuenta1;
 
-  cuenta1.setSaldo(15000);
+  CuentaBancaria cuenta2;
 
-  cout << cuenta1.getSaldo();
+
+  cout << "primera comparacion: " << endl; 
+  cout << "---------------------" << endl;
+  cuenta1.compararCuentas(cuenta2);
+  cout << "" << endl; 
+  cout << "segunda comparacion: " << endl;
+  cout << "---------------------" << endl;
+  cuenta1.compararCuentas(cuenta1);
+  cout << "" << endl; 
+
 }
