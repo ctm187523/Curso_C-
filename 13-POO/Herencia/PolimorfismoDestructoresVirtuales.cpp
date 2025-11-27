@@ -67,37 +67,7 @@ class Profesor: public Persona{     //para heredar en c++ se pone : public Nombr
         }
 };
 
-
-
-
-
-int main(){
-
-    //creamos las instancias
-    Alumno a1("Laura",20,"Ingenieria Informatica");
-
-    Profesor p1("Carlos", 45, "Programacion en C++");
-
-    //hacemos una asignacion, ponemos un objeto de tipo Alumno a uno de tipo Persona, principio es un, un alumno es una persona
-    Persona persona1=a1;
-
-    //hacemos una asignacion, ponemos un objeto de tipo Profesor a uno de tipo Persona, principio es un, un Profesor es una persona
-    Persona persona2=p1;
-
-    //en este caso hace referencia al metodo mostrarDatos de la clase Persona
-    //en Java, C# y otros lenguajes llamaria a mostrarDatos de la clase Alumno
-    //pero en C++ al hacer estas asignaciones se produce un object slicing, es decir
-    //un corte de objeto, un corte de las propiedades, en este caso Alumno pierde sus propios
-    //campos y sus propios métodos.
-    persona1.mostrarDatos();
-
-    cout << "------------------Con punteros y uso de virtual en la clase padre--------------------------"  << endl;
-
-    //para lograr este polimorfismo y que el objeto que hereda de persona guarde sus propiedades y campos
-    //debemos usar punteros y usar en la clase Padre en este caso Persona2,ver abajo, en el metodo mostrarDatos() 
-    //la palabra reservada virtual.
-   
-   
+  
 //clase padre
 class Persona2{
 
@@ -146,6 +116,33 @@ class Alumno2: public Persona2{     //para heredar en c++ se pone : public Nombr
         }
 };
    
+
+int main(){
+
+    //creamos las instancias
+    Alumno a1("Laura",20,"Ingenieria Informatica");
+
+    Profesor p1("Carlos", 45, "Programacion en C++");
+
+    //hacemos una asignacion, ponemos un objeto de tipo Alumno a uno de tipo Persona, principio es un, un alumno es una persona
+    Persona persona1=a1;
+
+    //hacemos una asignacion, ponemos un objeto de tipo Profesor a uno de tipo Persona, principio es un, un Profesor es una persona
+    Persona persona2=p1;
+
+    //en este caso hace referencia al metodo mostrarDatos de la clase Persona
+    //en Java, C# y otros lenguajes llamaria a mostrarDatos de la clase Alumno
+    //pero en C++ al hacer estas asignaciones se produce un object slicing, es decir
+    //un corte de objeto, un corte de las propiedades, en este caso Alumno pierde sus propios
+    //campos y sus propios métodos.
+    persona1.mostrarDatos();
+
+    cout << "------------------Con punteros y uso de virtual en la clase padre--------------------------"  << endl;
+
+    //para lograr este polimorfismo y que el objeto que hereda de persona guarde sus propiedades y campos
+    //debemos usar punteros y usar en la clase Padre en este caso Persona2,ver abajo, en el metodo mostrarDatos() 
+    //la palabra reservada virtual.
+
     //creamos las instancias
     Alumno2 a3("Laura",20,"Ingenieria Informatica");
 
@@ -156,3 +153,5 @@ class Alumno2: public Persona2{     //para heredar en c++ se pone : public Nombr
     persona3->mostrarDatos();
 
 }
+   
+ 
