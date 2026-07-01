@@ -28,7 +28,7 @@ using namespace std;
 //herencia multiple, pero si tuvieramos herencia multiple tendriamos que usar la palabra reservada virtual al heredar de la clase D para solucionar el problema del Diamond Problem
 
 //el diamond problem lo veremos en el siguiente ejemplo
-//las interfaces se usan para solventar o simplificar este problema de Diamond Proble
+//las interfaces se usan para solventar o simplificar este problema de Diamond Problem
 class IVolador{     //por convencion se pone una I al inicio para diferenciar que es una interfaz
     public:
         virtual void puedoVolar()=0;  
